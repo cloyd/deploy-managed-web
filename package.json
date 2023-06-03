@@ -63,6 +63,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logic": "^2.0.1",
     "sanitize-html": "^1.20.0",
+    "sass": "^1.62.1",
     "store": "^2.0.12",
     "yup": "^0.26.6"
   },
