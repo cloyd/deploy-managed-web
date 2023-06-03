@@ -1,0 +1,1 @@
+export { TenantFormNotificationSettings } from './NotificationSettings';

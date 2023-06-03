@@ -1,0 +1,63 @@
+// UserSearchSelect component
+.user-search-select {
+  position: relative;
+  z-index: 10;
+
+  // react-select/Select component
+  .user-search-input {
+    z-index: 1;
+  }
+
+  // SelectOptionsDropdown buttons
+  button.btn-link {
+    &:active,
+    &:focus {
+      border-color: #4d81ce !important;
+    }
+  }
+
+  // Overlay is used to trigger closing user-search-dropdown
+  .click-exit-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
+
+// SelectOptionsDropdown component
+.user-search-dropdown {
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+
+  .user-search-dropdown-items {
+    max-height: 260px;
+    overflow-y: scroll;
+    width: 100%;
+  }
+}
+
+// OptionItem component
+button.user-search-dropdown-item {
+  border-bottom: 1px solid #dee2e6;
+  border-radius: 0;
+  display: block;
+  text-align: left;
+  width: 100%;
+
+  &:active,
+  &:focus {
+    border-color: #4d81ce !important;
+  }
+}
+
+// SelectModal component
+.modal-search-results {
+  height: 470px;
+}

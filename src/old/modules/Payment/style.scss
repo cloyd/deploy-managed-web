@@ -1,0 +1,27 @@
+@media (min-width: 992px) and (max-width: 1275px) {
+  .card.payments-custom-card {
+    max-width: 720px;
+    margin: auto;
+
+    .row.payments-custom-column-info {
+      flex-direction: column;
+
+      > div {
+        max-width: unset;
+        flex: unset;
+
+        padding-top: 0.5rem;
+      }
+    }
+
+    .row.payments-custom-column-pay {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  div.payments-custom-header {
+    // important is used to override bootstrap css
+    display: none !important;
+  }
+}

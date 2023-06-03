@@ -1,0 +1,88 @@
+@import '../../../styles/bootstrap/core';
+
+.status-bar {
+  overflow: auto;
+  display: flex;
+  margin-right: 1%;
+
+  .btn-link {
+    border: 0;
+    width: calc(100% / 10);
+    height: 76px;
+    padding: 0;
+
+    min-width: 60px;
+
+    @include media-breakpoint-up(md) {
+      min-width: none;
+    }
+
+    .small {
+      height: 34px;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      cursor: pointer;
+
+      svg {
+        color: lighten(#28a745, 15%);
+      }
+    }
+
+    .status-icon {
+      display: block;
+      position: relative;
+
+      svg {
+        position: relative;
+        z-index: 1;
+        background-color: #fff;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 0;
+        pointer-events: none;
+        top: 8px;
+        width: 50%;
+        border-top: 3px solid #fff;
+      }
+
+      &::after {
+        margin-left: 50%;
+      }
+
+      &.text-success {
+        &::before,
+        &::after {
+          border-top-color: #28a745;
+        }
+      }
+
+      &.text-success.active {
+        &::after {
+          border-top-color: #fff;
+        }
+      }
+    }
+
+    &:first-of-type {
+      width: auto;
+
+      .status-icon::before {
+        display: none;
+      }
+    }
+
+    &:last-of-type {
+      .status-icon::after {
+        display: none;
+      }
+    }
+  }
+}

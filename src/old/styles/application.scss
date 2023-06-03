@@ -1,0 +1,363 @@
+// This import throws a deprecation warning about importing css but having
+// issues loading it via a js import.
+
+@import 'react-datepicker/dist/react-datepicker';
+
+// These are ok.
+@import './bootstrap/bootstrap';
+@import './fonts';
+@import './print';
+
+body,
+html {
+  height: 100%;
+  background: $gray-200;
+}
+
+iframe {
+  border: 0;
+}
+
+// Appears to longer be required
+// .wrapper {
+// padding-bottom: 55px;
+// }
+
+.pointer {
+  cursor: pointer;
+}
+
+.pe-none {
+  pointer-events: none;
+}
+
+.normal-line-wrap {
+  white-space: normal;
+  line-height: 1.1;
+}
+
+.text-small {
+  font-size: 90%;
+}
+
+.text-agency,
+.text-manager {
+  color: $purple !important;
+}
+
+.text-owner {
+  color: $pink !important;
+}
+
+.text-tenant {
+  color: $cyan !important;
+}
+
+.text-linethrough {
+  text-decoration: line-through;
+}
+
+.text-external-creditor {
+  color: $yellow !important;
+}
+
+.h1-font-size {
+  font-size: $h1-font-size;
+}
+
+.h2-font-size {
+  font-size: $h2-font-size;
+}
+
+.h3-font-size {
+  font-size: $h3-font-size;
+}
+
+.h4-font-size {
+  font-size: $h4-font-size;
+}
+
+.h5-font-size {
+  font-size: $h5-font-size;
+}
+
+.position-top {
+  top: 0;
+}
+
+.position-right {
+  right: 0;
+}
+
+.position-bottom {
+  bottom: 0;
+}
+
+.position-left {
+  left: 0;
+}
+
+.md-font-size {
+  font-size: $font-size-medium;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.separator {
+  height: 50px;
+}
+
+body:not(.modal-open) {
+  padding-right: 0px !important;
+}
+
+.modal-open .filter-blur {
+  filter: blur(4px);
+}
+
+.modal-dialog {
+  outline: none;
+}
+
+.modal-fullscreen {
+  width: 100vw;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+
+  .modal-content {
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .modal-header,
+  .modal-footer {
+    border-radius: 0;
+  }
+
+  .modal-body {
+    overflow-y: auto;
+  }
+}
+
+.custom-control-sm {
+  font-size: 85%;
+  line-height: 1.2;
+
+  .custom-control-label {
+    vertical-align: middle;
+    align-items: center;
+    display: flex;
+  }
+}
+
+.cover-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.brand-default {
+  @extend .cover-img;
+  background-image: url('../assets/brand-default.png');
+}
+
+.connect-now-logo {
+  display: block;
+  width: 124px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  background-image: url('../../assets/images/connectnow.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.marketplace-jobs {
+  @extend .cover-img;
+  background-image: url('../../assets/images/marketplace-jobs.jpeg');
+}
+
+.dropdown-menu {
+  max-height: 80vh;
+  overflow: auto;
+  z-index: 9999;
+}
+
+.multi-select {
+  z-index: 9999;
+}
+
+.multi-select.data-export {
+  margin-top: -5px;
+}
+
+.no-focus {
+  &:focus {
+    outline: 0px;
+    box-shadow: none;
+  }
+}
+
+.tooltip {
+  pointer-events: none;
+  .arrow {
+    display: none !important;
+  }
+}
+
+.popover {
+  border-width: 0;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+}
+
+.popover-header {
+  background-color: white;
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.dda-agreement {
+  ol {
+    counter-reset: item;
+    padding-left: 1rem;
+
+    > li {
+      display: block;
+      margin-bottom: 0.5rem;
+
+      &:before {
+        content: counters(item, '.') '. ';
+        counter-increment: item;
+        font-weight: bold;
+      }
+    }
+
+    > div {
+      padding-left: 1rem;
+    }
+  }
+}
+
+.alert-highlight {
+  color: $purple;
+  background-color: $purple-200;
+  border-color: $purple;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+@each $color, $value in $colors {
+  @include bg-variant('.bg-#{$color}', $value);
+}
+
+@each $color, $value in $theme-colors {
+  .border-#{$color} {
+    border-color: $value;
+  }
+
+  .box-shadow-#{$color} {
+    box-shadow: 0 0 0 $input-btn-focus-width rgba($value, 0.25);
+  }
+
+  .box-shadow-alert-#{$color} {
+    box-shadow: 0.3rem 0.3rem rgba($value, 0.6);
+  }
+}
+
+@each $gray, $value in $grays {
+  @include bg-variant('.bg-#{$gray}', $value);
+
+  .border-#{$gray} {
+    border-color: $value;
+  }
+
+  .text-#{$gray} {
+    color: $value;
+  }
+}
+
+// Hide arrows from Input number
+// Chrome, Safari, Edge, Opera
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Firefox
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.address-autocomplete .rbt-menu.dropdown-menu.show:after {
+  content: '';
+  display: block;
+  height: 0.813rem;
+  background: transparent url('../../assets/images/powered-by-google.png')
+    no-repeat;
+  background-size: 6.375rem 0.813rem;
+  background-position: right bottom;
+  margin-right: 0.625rem;
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.3s linear;
+  visibility: visible;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: visibility 0s 0.3s, opacity 0.3s linear;
+  visibility: hidden;
+}
+
+// workaround for extra space in Edit Task
+.uppy-DragDrop-input {
+  display: none;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
+.mask-image-edges {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+}
+
+.rounded-left-lg {
+  border-top-left-radius: $card-border-radius;
+  border-bottom-left-radius: $card-border-radius;
+}
+
+.btn-card:focus {
+  border-radius: $card-border-radius;
+}
+
+.gap-2 {
+  gap: 2px;
+}
+
+.gap-3 {
+  gap: 3px;
+}
+
+.resend-wrapper {
+  .resend-button {
+    font-size: 100%;
+  }
+}

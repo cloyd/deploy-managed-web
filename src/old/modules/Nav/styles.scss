@@ -1,0 +1,105 @@
+// Taken from https://github.com/twbs/bootstrap/blob/master/scss/_navbar.scss#L254
+// This is the .navbar-dark style, we don't want to force the dark style for
+// the reactstrap <Navbar /> as a theme may require the light version.
+
+@import '../../styles/bootstrap/core';
+
+.navbar-sub {
+  background: $purple-400;
+  height: 4.375rem;
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-dark-color;
+
+      @include hover-focus {
+        color: $navbar-dark-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-dark-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-dark-active-color;
+    }
+  }
+}
+
+.navbar > .container {
+  flex-wrap: unset !important;
+}
+
+.nav-item {
+  border-radius: 7px;
+  padding: 5px;
+
+  &.active {
+    background: #ececec;
+  }
+}
+
+// https://codepen.io/designcouch/pen/ExvwPY
+// The Nav Icon is made up of 4 thick lines (spans)
+// that transform from a hamburger to a cross
+#nav-icon {
+  width: 28px;
+  position: relative;
+  margin: 15px 0 0 10px;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 10px;
+    }
+
+    &:nth-child(4) {
+      top: 20px;
+    }
+  }
+
+  &.open {
+    span {
+      &:nth-child(1) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
+      }
+    }
+  }
+}

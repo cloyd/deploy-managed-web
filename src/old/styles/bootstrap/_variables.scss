@@ -1,0 +1,94 @@
+/*
+ * Overide bootstrap variables here.
+ * Reference: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
+ */
+
+// Color System
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss#L11
+
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #f0f1f2;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+$blue: #548ce0;
+$indigo: #6610f2;
+$purple: #6622c9;
+$pink: #de00ce;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #00e6ff;
+$lavender: #f9f5ff;
+
+// Custom colors
+$purple-100: #f7f4fb;
+$purple-200: #e7dff6;
+$purple-300: #9e73e5;
+$purple-400: #260e61;
+$yellow-light: #f6f1de;
+$green-light: #0daf21;
+
+$colors: (
+  'gray-200': $gray-200,
+  'lavender': $lavender,
+  'purple-100': $purple-100,
+  'purple-200': $purple-200,
+  'purple-300': $purple-300,
+  'purple-400': $purple-400,
+  'yellow-light': $yellow-light,
+  'green-light': $green-light,
+);
+
+$body-color: $gray-800;
+
+// Theme
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss#L73
+$primary: $purple;
+$secondary: $blue;
+
+// Links
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss#L164
+$link-hover-decoration: none;
+
+// Fonts
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss#L246
+$font-size-base: 0.9375rem; // 15px
+$font-size-medium: ceil(($font-size-base * 0.9));
+$font-family-sans-serif: 'activ-regular', -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol';
+$headings-font-family: 'fugue-regular', $font-family-sans-serif;
+
+// Buttons
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss#L369
+$btn-padding-y: calc(0.375rem / 2);
+$btn-padding-y-sm: calc(0.25rem / 2);
+$btn-padding-y-lg: calc(0.5rem / 2);
+
+// Forms
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss#L406
+$label-margin-bottom: 0.25rem;
+$input-border-color: $gray-300;
+$form-feedback-icon-valid: '';
+$form-feedback-icon-invalid: '';
+
+// Cards
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss#L708
+// $card-border-color: $white;
+$card-border-color: $white;
+$card-border-radius: 0.75rem;
+
+// Alerts
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss#L929
+$alert-bg-level: -11;
+$alert-color-level: 1;

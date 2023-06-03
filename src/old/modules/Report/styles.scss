@@ -1,0 +1,19 @@
+.report-footer {
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+  text-align: right;
+
+  > div {
+    > span:first-of-type {
+      font-weight: bold;
+    }
+  }
+}
+
+.report-value {
+  &.btn-link,
+  &.text-dark {
+    font-weight: 300;
+    font-size: 2rem;
+  }
+}

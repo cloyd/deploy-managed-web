@@ -1,0 +1,1 @@
+export { ContactsServiceProvider } from './ServiceProvider';

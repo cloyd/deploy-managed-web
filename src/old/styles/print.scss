@@ -1,0 +1,27 @@
+@media print {
+  .alert {
+    border: 0;
+  }
+
+  .badge {
+    border: 1px solid transparent;
+    margin-right: 5px;
+  }
+
+  .brand-default,
+  .brand-logo {
+    background-position: right center !important;
+    min-height: 30px;
+    min-width: 135px;
+  }
+
+  .dropdown {
+    button {
+      border: none;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

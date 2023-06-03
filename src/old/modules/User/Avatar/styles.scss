@@ -1,0 +1,22 @@
+.avatar-editor-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+
+  svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  path {
+    transition: fill 0.5s;
+    fill: rgba(0, 0, 0, 0.4);
+  }
+}

@@ -1,0 +1,12 @@
+main.billie {
+  object,
+  .uppy-DragDrop-container {
+    width: calc(100% - 2rem) !important;
+    height: calc(100% - 2rem) !important;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+}

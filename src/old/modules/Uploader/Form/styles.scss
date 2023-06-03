@@ -1,0 +1,17 @@
+@import '@uppy/status-bar/dist/style.min.css';
+@import '@uppy/drag-drop/dist/style.min.css';
+
+.uppy-DragDrop-inner {
+  padding: 30px 10px !important;
+}
+
+.uppy-FileInput-btn {
+  background: none;
+  -webkit-appearance: none;
+  font-size: inherit;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: inherit;
+}

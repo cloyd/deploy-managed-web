@@ -1,0 +1,113 @@
+@import '../../styles/bootstrap/core';
+
+.outgoings-header-height {
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
+
+.outgoings-dark-bg {
+  background-color: #a791d0;
+}
+
+.outgoings-light-bg {
+  background-color: #d0c2ea;
+}
+
+.outgoings-border-left {
+  border-left: 1px solid white;
+}
+
+.outgoings-form-height {
+  max-height: 50vh;
+  overflow: scroll;
+}
+
+#calculator-link.nav-link {
+  padding: 0;
+  cursor: pointer;
+}
+
+.calculator {
+  .popover {
+    top: 17rem !important;
+    z-index: 1000;
+  }
+
+  .popover-body {
+    padding: 0;
+  }
+
+  .popover-inner {
+    height: 16.625rem;
+  }
+
+  .collapsible {
+    background-color: white;
+    border-radius: 0 0 0.75rem 0.75rem;
+
+    .body {
+      display: none;
+    }
+
+    .header {
+      border-radius: 0 0 0.75rem 0.75rem;
+      cursor: pointer;
+    }
+
+    .col-form-label-sm {
+      padding-bottom: 0;
+    }
+
+    .input-group-sm > div {
+      margin: 0 !important;
+    }
+  }
+
+  .collapsible.open {
+    position: relative;
+    bottom: 7.875rem;
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 7.188rem;
+    }
+
+    .header {
+      border-radius: 0;
+    }
+  }
+}
+
+.property-list-container {
+  .card {
+    overflow: hidden;
+
+    > img {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      width: 100%;
+      border-top-left-radius: calc(0.75rem - 1px);
+      border-top-right-radius: calc(0.75rem - 1px);
+      overflow: hidden;
+    }
+  }
+}
+
+img.use-progressive-img {
+  transition: filter 0.3s ease-out 0.8s;
+  filter: none;
+
+  @include media-breakpoint-up(md) {
+    min-height: 200px;
+  }
+
+  &.blur {
+    filter: blur(10px);
+    clip-path: inset(0);
+    max-height: 200px;
+  }
+}
