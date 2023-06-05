@@ -159,9 +159,7 @@ export const logic = [
     },
     process({ action, httpClient }) {
       console.log('httpClient', httpClient);
-      console.log('baseURL', httpClient.baseURL);
 
-      debugger;
       return httpClient
         .post(`/login`, action.payload)
         .then((response) => response.data);

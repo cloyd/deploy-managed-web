@@ -101,13 +101,7 @@ export const handleReject = (error, store) => {
 };
 
 export const httpClient = axios.create({
-  baseURL: '/api',
-  // headers: {
-  //   'Content-Type': 'application/json',
-  //   'Access-Control-Allow-Origin': '*',
-  //   'Access-Control-Allow-Headers': '*',
-  //   'Access-Control-Allow-Credentials': true,
-  // },
+  baseURL: import.meta.env.PROD ? import.meta.env.MANAGED_APP_API_URL : '/api',
 });
 
 httpClient.all = axios.all;
