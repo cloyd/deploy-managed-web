@@ -63,25 +63,19 @@ const defaultConfig = {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'MANAGED_APP_');
 
-  console.log('env', env);
-
-  if (mode === 'development') {
-    return {
-      ...defaultConfig,
-      server: {
-        open: true,
-        port: 3001,
-        proxy: {
-          '/api': {
-            target: env.MANAGED_APP_API_URL || 'http://localhost:3000/api',
-            changeOrigin: true,
-            secure: false,
-            rewrite: (path) => path.replace(/^\/api/, ''),
-          },
+  return {
+    ...defaultConfig,
+    server: {
+      open: true,
+      port: 3001,
+      proxy: {
+        '/api': {
+          target: 'https://managed-dev.man.redant.com.au/api',
+          changeOrigin: true,
+          secure: false,
+          rewrite: (path) => path.replace(/^\/api/, ''),
         },
       },
-    };
-  }
-
-  return defaultConfig;
+    },
+  };
 });
