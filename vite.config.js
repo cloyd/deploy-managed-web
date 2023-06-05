@@ -20,13 +20,9 @@ const rollupPlugin = (matchers) => ({
 });
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const isDevEnv = mode === 'development';
   const env = loadEnv(mode, process.cwd(), 'MANAGED_APP_');
 
-  console.log('env', env);
-
   return {
-    logLevel: 'info',
     envPrefix: 'MANAGED_APP_',
     resolve: {
       alias: {

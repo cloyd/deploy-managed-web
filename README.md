@@ -53,9 +53,13 @@ To run this project, you will need to add the following environment variables to
 `MANAGED_APP_API_URL`
 
 Settings
+
 `MANAGED_APP_VERSION`
+
 `MANAGED_APP_GCP`
+
 `MANGED_APP_GMT`
+
 `MANGED_APP_NOTIFICATIONS_USER_INVITED`
 
 ## Tech Stack
