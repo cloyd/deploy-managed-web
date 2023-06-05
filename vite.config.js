@@ -18,62 +18,70 @@ const rollupPlugin = (matchers) => ({
     }
   },
 });
+
+const defaultConfig = {
+  envPrefix: 'MANAGED_APP_',
+  resolve: {
+    alias: {
+      // eslint-disable-next-line no-undef
+      '@app': path.resolve(__dirname, './src/old'),
+    },
+  },
+  plugins: [react()],
+  preview: {
+    port: 8080,
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+      },
+    },
+  },
+  build: {
+    rollupOptions: {
+      plugins: [rollupPlugin([/\/src\/.*\.js$/])],
+    },
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
+  esbuild: {
+    loader: 'jsx',
+    include: [
+      // Business as usual for .jsx and .tsx files
+      'src/**/*.jsx',
+      'node_modules/**/*.jsx',
+
+      // Add the specific files you want to allow JSX syntax in
+      'node_modules/preact-css-transition-group/src/CSSTransitionGroup.js',
+    ],
+  },
+};
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'MANAGED_APP_');
 
   console.log('env', env);
 
-  return {
-    envPrefix: 'MANAGED_APP_',
-    resolve: {
-      alias: {
-        // eslint-disable-next-line no-undef
-        '@app': path.resolve(__dirname, './src/old'),
-      },
-    },
-    plugins: [react()],
-    server: {
-      open: true,
-      port: 3001,
-      proxy: {
-        '/api': {
-          target: env.MANAGED_APP_API_URL || 'http://localhost:3000/api',
-          changeOrigin: true,
-          secure: false,
-          rewrite: (path) => path.replace(/^\/api/, ''),
+  if (mode === 'development') {
+    return {
+      ...defaultConfig,
+      server: {
+        open: true,
+        port: 3001,
+        proxy: {
+          '/api': {
+            target: env.MANAGED_APP_API_URL || 'http://localhost:3000/api',
+            changeOrigin: true,
+            secure: false,
+            rewrite: (path) => path.replace(/^\/api/, ''),
+          },
         },
       },
-    },
-    preview: {
-      port: 8080,
-    },
-    optimizeDeps: {
-      esbuildOptions: {
-        loader: {
-          '.js': 'jsx',
-        },
-      },
-    },
-    build: {
-      rollupOptions: {
-        plugins: [rollupPlugin([/\/src\/.*\.js$/])],
-      },
-      commonjsOptions: {
-        transformMixedEsModules: true,
-      },
-    },
+    };
+  }
 
-    esbuild: {
-      loader: 'jsx',
-      include: [
-        // Business as usual for .jsx and .tsx files
-        'src/**/*.jsx',
-        'node_modules/**/*.jsx',
-
-        // Add the specific files you want to allow JSX syntax in
-        'node_modules/preact-css-transition-group/src/CSSTransitionGroup.js',
-      ],
-    },
-  };
+  return defaultConfig;
 });
