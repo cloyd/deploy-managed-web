@@ -22,6 +22,8 @@ const rollupPlugin = (matchers) => ({
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'MANAGED_APP_');
 
+  console.log('env', env);
+
   return {
     envPrefix: 'MANAGED_APP_',
     resolve: {
