@@ -18,7 +18,6 @@ const rollupPlugin = (matchers) => ({
     }
   },
 });
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'MANAGED_APP_');
@@ -32,6 +31,18 @@ export default defineConfig(({ mode }) => {
       },
     },
     plugins: [react()],
+    server: {
+      open: true,
+      port: 3001,
+      proxy: {
+        '/api': {
+          target: env.MANAGED_APP_API_URL || 'http://localhost:3000/api',
+          changeOrigin: true,
+          secure: false,
+          rewrite: (path) => path.replace(/^\/api/, ''),
+        },
+      },
+    },
     preview: {
       port: 8080,
     },
